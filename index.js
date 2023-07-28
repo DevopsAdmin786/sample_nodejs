@@ -1,9 +1,11 @@
-const express = require('express');
+import {APIGatewayProxyEvent, APIGatewayProxyResultV2,Handler} from 'aws-lambda'
+//exports.handler = async (event: APIGatewayProxyEvent) => {
 
-const app = express();
-
-const PORT = process.env.PORT || 3000;
-
-app.get('/',(req, res) => res.send('Hello World'));
-
-app.listen(PORT, () => console.log(`Server listening in port ${PORT}`))
+export const handler: Handler = async (event: APIGatewayProxyEvent) => {
+  // TODO implement
+  const response = {
+    statusCode: 200,
+    body: JSON.stringify('Hello from Lambda! and from GitHub'),
+  };
+  return response;
+};
